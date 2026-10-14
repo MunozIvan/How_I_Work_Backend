@@ -79,51 +79,5 @@ docker compose up -d
 npm test
 ```
 
-They cover the main flows: register and login, rate limiting, the cache being invalidated, filters and pagination, checkout, stock that runs out between adding to the cart and paying, cancelling an order, and not being able to see other people's orders.
-
-## Endpoints
-
-Everything is under `/api`. The ones marked 🔒 need `Authorization: Bearer <token>`, and 👑 means admin only.
-
-**Auth**
-- `POST /auth/register`
-- `POST /auth/login`
-- `GET /auth/me` 🔒
-
-**Products**
-- `GET /products`: supports `page`, `limit`, `search`, `categoryId`, `minPrice`, `maxPrice` and `sort` (`newest`, `price_asc`, `price_desc`)
-- `GET /products/:id`
-- `POST /products` 👑
-- `PATCH /products/:id` 👑
-- `DELETE /products/:id` 👑 (soft delete, old orders still reference it)
-- `GET /categories`
-- `POST /categories` 👑
-
-**Cart** 🔒
-- `GET /cart`
-- `POST /cart/items` with `{ productId, quantity }`
-- `PATCH /cart/items/:productId` with `{ quantity }`
-- `DELETE /cart/items/:productId`
-- `DELETE /cart`
-
-**Orders** 🔒
-- `POST /orders`: checkout, turns the cart into an order
-- `GET /orders`
-- `GET /orders/:id`
-- `PATCH /orders/:id/status` 👑 (`pending → paid → shipped`, or `cancelled`, which gives the stock back)
-
-Errors always look like this:
-
-```json
-{ "error": "Validation error", "details": [{ "path": "email", "message": "Invalid email" }] }
-```
-
-## What I'd add next
-
-- Swagger docs
-- Payments with Mercado Pago (webhooks to move orders to `paid`)
-- Refresh tokens
-- Logging with pino
-- A proper migrations tool instead of a single `schema.sql`
 
 If you have any feedback or questions about why I did something a certain way, feel free to reach out on [LinkedIn](https://www.linkedin.com/in/ivanmg-f-s-developer/).
