@@ -1,6 +1,3 @@
--- E-commerce schema (MySQL 8)
--- Prices are stored in cents (INT) to avoid floating point rounding errors.
-
 CREATE TABLE IF NOT EXISTS users (
   id            INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   email         VARCHAR(255) NOT NULL,

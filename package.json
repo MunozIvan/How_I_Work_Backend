@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-api",
   "version": "1.0.0",
-  "description": "REST API for an e-commerce built with TypeScript, Express, MySQL and Redis",
+  "description": "A REST API for an e-commerce platform, built to reflect how I approach backend design and organization.",
   "type": "module",
   "main": "dist/server.js",
   "engines": {

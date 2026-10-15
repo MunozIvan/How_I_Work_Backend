@@ -6,7 +6,7 @@ const envSchema = z.object({
   PORT: z.coerce.number().int().positive().default(3000),
 
   DB_HOST: z.string().default('localhost'),
-  DB_PORT: z.coerce.number().int().positive().default(3306),
+  DB_PORT: z.coerce.number().int().positive().default(3307),
   DB_USER: z.string().default('ecommerce'),
   DB_PASSWORD: z.string().default('ecommerce'),
   DB_NAME: z.string().default('ecommerce'),
