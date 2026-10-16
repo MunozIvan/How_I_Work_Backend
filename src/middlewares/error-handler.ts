@@ -6,7 +6,7 @@ export function notFoundHandler(req: Request, _res: Response, next: NextFunction
   next(HttpError.notFound(`Route ${req.method} ${req.originalUrl} not found`));
 }
 
-//This middleware needs _next param otherwise it won't work properly!
+// This middleware needs _next param otherwise it won't work properly!
 export function errorHandler(err: unknown, _req: Request, res: Response, _next: NextFunction): void {
   if (err instanceof ZodError) {
     res.status(400).json({
@@ -26,7 +26,7 @@ export function errorHandler(err: unknown, _req: Request, res: Response, _next: 
     return;
   }
 
-  //Mysql
+  // MySQL
   if (isMysqlError(err) && err.code === 'ER_DUP_ENTRY') {
     res.status(409).json({ error: 'Resource already exists' });
     return;
@@ -38,7 +38,7 @@ export function errorHandler(err: unknown, _req: Request, res: Response, _next: 
 
 // Helpers
 
-// Mysql
+// MySQL
 function isMysqlError(err: unknown): err is { code: string } {
   return typeof err === 'object' && err !== null && 'code' in err && typeof err.code === 'string';
 }
