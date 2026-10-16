@@ -2,13 +2,13 @@
 
 Hi! I'm Iván, a Backend Engineer from Buenos Aires.
 
-This repo is a small e-commerce API (users, products, cart and orders) built with TypeScript, Express, MySQL and Redis. The business itself is just an excuse. What I actually wanted was a project that shows **how I like to structure and work on a backend**: how I split the code, where validation goes, how I deal with the database and the cache, and what I test.
+Most of the backend work I've done professionally is private, so I wanted a public project where people could actually see how I work. That's why I built this e-commerce to share how I approach backend architecture and code organization.
 
-It's not a production store, but I tried to solve the problems a real one would run into, like two people buying the last unit at the same time.
+This repo is a small e-commerce API (users, products, cart and orders) built with TypeScript, Express, MySQL and Redis. The business itself is just an excuse. What I actually wanted was a project that shows **how I like to structure and work on a backend**: how I split the code, where validation goes, how I deal with the database and the cache, and what I test.
 
 ## Stack
 
-Node.js 22 · TypeScript · Express 5 · MySQL 8 (mysql2, plain SQL) · Redis 7 (ioredis) · Zod · JWT · Vitest + Supertest · Docker
+Node.js 22 · TypeScript · Express 5 · MySQL 8 · Redis 7 · JWT · Vitest + Supertest · Docker
 
 ## How I organize the code
 
