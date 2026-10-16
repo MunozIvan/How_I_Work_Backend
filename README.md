@@ -4,8 +4,6 @@ Hi! I'm Iván, a Backend Engineer from Buenos Aires.
 
 Most of the backend work I've done professionally is private, so I wanted a public project where people could actually see how I work. That's why I built this e-commerce to share how I approach backend architecture and code organization.
 
-This repo is a small e-commerce API (users, products, cart and orders) built with TypeScript, Express, MySQL and Redis. The business itself is just an excuse. What I actually wanted was a project that shows **how I like to structure and work on a backend**: how I split the code, where validation goes, how I deal with the database and the cache, and what I test.
-
 ## Stack
 
 Node.js 22 · TypeScript · Express 5 · MySQL 8 · Redis 7 · JWT · Vitest + Supertest · Docker
@@ -52,7 +50,7 @@ Errors are thrown as `HttpError` from anywhere, and one middleware at the end tu
 
 **Small security details.** Login has a rate limit (also in Redis), login errors don't tell you if the email exists, and if you ask for someone else's order you get a 404 instead of a 403, so you can't even confirm it exists.
 
-**Prices in cents.** Money is stored as integers. Floats and money don't mix well. (I Had bad experiences before hahaha)
+**Prices in cents.** Money is stored as integers. Floats and money don't mix well. (I had bad experiences before hahaha)
 
 ## Running it
 
